@@ -16,6 +16,7 @@ To start using Let's Waffle! Bot, you'll need a GitHub repo.  We suggest creatin
 1. Let's Waffle! Bot will move the issue into In Progress and start a conversation with you in the issue about what to do next!
 
 Tip: Let's Waffle! Bot communicates by creating new issues and commenting on issues.  You can click on the real-time notifications on your Waffle board to see new comments from Let's Waffle! Bot.
+
 ![Image of Communicating with Bot](https://i.imgur.com/ucHYGbe.png)
 
 ## Contributing
