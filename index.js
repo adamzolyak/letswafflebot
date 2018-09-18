@@ -100,29 +100,31 @@ module.exports = app => {
   		if (eventSender === "wafflebot[bot]") {
   		console.log("WaffleBot moved pull request into Done")
 
-  		const userPRComment = context.issue({body:":+1: Great job!  Your Pull Request is now attached to your Issue on your Waffle board.  WaffleBot also assigned the Pull Request to you since you opened it.\n\nWaffleBot will move the Pull Request and Issue to Done when the Pull Request is merged.  Go ahread and try merging your Pull Request."})
+  		const userPRComment = context.issue({body:":+1: Great job!\n\n## What just happened?\n\nWaffleBot moved the Issue and Pull Request to the Done column.\n\n##What's next?\n\nCongradulations!  You learn how to move a card from idea to done without ever manually updating your Waffle board :smile:!  This task is complete!\b\bCheck the To Do and Inbox columns on your Waffle board for other tasks to keep on learning!"})
       	context.github.issues.createComment(userPRComment)
 
-  		const userIssueComment = context.issue({number:currentIssue,body:":+1: Great job!  Your Pull Request is now attached to your Issue on your Waffle board.  WaffleBot also assigned the Pull Request to you since you opened it.\n\nWaffleBot will move the Pull Request and Issue to Done when the Pull Request is merged.  Go ahread and try merging your Pull Request."})
+  		const userIssueComment = context.issue({number:currentIssue,body:":+1: Great job!\n\n## What just happened?\n\nWaffleBot moved the Issue and Pull Request to the Done column.\n\n##What's next?\n\nCongradulations!  You learn how to move a card from idea to done without ever manually updating your Waffle board :smile:!  This task is complete!\b\bCheck the To Do and Inbox columns on your Waffle board for other tasks to keep on learning!"})
       	context.github.issues.createComment(userIssueComment)
 
-      	const issue1 = context.issue({title: "Automating AllTheThings!", body: "You've done a great job of learning how to automate moving and assigning a card across your Waffle board.  But there's even more automation to learn about.\n\nTo keep learning, check out the [Waffle Automation Cheatsheet](https://waffle.io/features/cheatsheet) - the complete guide to customizing your Waffle board's automation and includes a Quick Reference to all the commands.\n\nI also added a few other suggestions for things to learn in the Inbox column.", labels:["to do", ":runner: Let's Waffle!"]})
+      	const issue1 = context.issue({title: "Automate AllTheThings!", body: ":muscle: You've done a great job of learning how to automate :running: a card from idea to done across your Waffle board.  But there's even more automation!\n\nTo keep learning, check out the [Waffle Automation Cheatsheet](https://waffle.io/features/cheatsheet) - the complete guide to customizing your Waffle board's automation :running::running::running: and includes a Quick Reference to all the commands :star:.\n\nThere are also a few additiomal cards in the Inbox column if you'd like to keep learning about Waffle.io :grinning:.", labels:["to do", ":runner: Let's Waffle!"]})
       	context.github.issues.create(issue1)
 
-      	const issue2 = context.issue({title: "Parent / Child Relationships", body: "text text text", labels:[":runner: Let's Waffle!"]})
-      	context.github.issues.create(issue2)
+        const issue2 = context.issue({title: "Parent / Child Relationships", body: "TODO", labels:[":runner: Let's Waffle!"]})
 
-      	const issue3 = context.issue({title: "Dependencies", body: "text text text", labels:[":runner: Let's Waffle!"]})
-      	context.github.issues.create(issue3)
+        const issue3 = context.issue({title: "Dependencies", body: "TODO", labels:[":runner: Let's Waffle!"]})
 
-      	const issue4 = context.issue({title: "Code Reviews", body: "text text text", labels:[":runner: Let's Waffle!"]})
-      	context.github.issues.create(issue4)
+        const issue4 = context.issue({title: "Code Reviews", body: "TODO", labels:[":runner: Let's Waffle!"]})
 
-      	const issue5 = context.issue({title: "CI Jobs, Automated Tests, and Status Checks", body: "text text text", labels:[":runner: Let's Waffle!"]})
-      	context.github.issues.create(issue5)
-
-      	const issue6 = context.issue({title: "Deployments", body: "text text text", labels:[":runner: Let's Waffle!"]})
+        const issue5 = context.issue({title: "CI Jobs, Automated Tests, and Status Checks", body: "TODO", labels:[":runner: Let's Waffle!"]})
+        
+        const issue6 = context.issue({title: "Deployments", body: "TODO", labels:[":runner: Let's Waffle!"]})
+   	
       	context.github.issues.create(issue6)
+        .then(context.github.issues.create(issue5))
+        .then(context.github.issues.create(issue4))
+        .then(context.github.issues.create(issue3))
+        .then(context.github.issues.create(issue2)) 
+        
   		}
   	}
 
