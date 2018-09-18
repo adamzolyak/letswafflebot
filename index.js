@@ -103,7 +103,7 @@ module.exports = app => {
       const submitPullRequestReview = context.issue({body:"Looks great! :shipit:", event:"APPROVE"})
 
       context.github.pullRequests.createReviewRequest(requestPullRequestReview)
-      .then(sleeper(10000))
+      .then(sleeper(30000))
       .then(context.github.pullRequests.createReview(submitPullRequestReview))
   		}
   	}
@@ -118,7 +118,7 @@ module.exports = app => {
       app.log.info("CREATING PR CHECK")
 
       context.github.checks.create(createPullRequestCheck)
-      .then(sleeper(30000))
+      .then(sleeper(20000))
       .then(function(newPRCheck){
         const updatePullRequestCheck = context.issue({check_run_id:newPRCheck.data.id,status:"completed",conclusion:"success",completed_at:nowGHFormatted()})
 
@@ -146,7 +146,6 @@ module.exports = app => {
       */
 
       	const issue1 = context.issue({title: "💪 Automate AllTheThings!", body: ":muscle: You've done a great job of learning how to automate :running: a card from idea to done across your Waffle board.  But there's even more automation!\n\nTo keep learning, check out the [Waffle Automation Cheatsheet](https://waffle.io/features/cheatsheet) - the complete guide to customizing your Waffle board's automation :running::running::running: and includes a Quick Reference to all the commands :star:.\n\nThere are also a few additiomal cards in the Inbox column if you'd like to keep learning about Waffle.io :grinning:.", labels:["to do", ":runner: Let's Waffle!"]})
-      	context.github.issues.create(issue1)
 
         const issue2 = context.issue({title: "👩‍👦 Parent / Child Relationships", body: "TODO", labels:[":runner: Let's Waffle!"]})
 
@@ -163,6 +162,7 @@ module.exports = app => {
         .then(context.github.issues.create(issue4))
         .then(context.github.issues.create(issue3))
         .then(context.github.issues.create(issue2)) 
+        .then(context.github.issues.create(issue1))
         
   		}
   	}
