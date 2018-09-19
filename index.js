@@ -1,7 +1,5 @@
 module.exports = app => {
 
-  //var currentIssue
-
   function sleeper(ms) {
     return function(x) {
       return new Promise(resolve => setTimeout(() => resolve(x), ms))
@@ -93,11 +91,6 @@ module.exports = app => {
   		const userPRComment = context.issue({body:":+1: Great job!\n\n## What just happened?\n\nWaffleBot moved the Pull Request to the In Progress column and assigned it to you since you opened it.  Your Pull Request is also visually connected to the Issue on your Waffle board, making it easy to track code and issues together.\n\n## What's next?\n\nWaffleBot will move the Pull Request and Issue to the Done column when the Pull Request is merged.  Let's try it!\n1. Merge your Pull Request.\n1. Watch your Waffle board to see what happens and check back here after you've completed these steps."})
       	context.github.issues.createComment(userPRComment)
 
-      /*
-  		const userIssueComment = context.issue({number:currentIssue,body:":+1: Great job!\n\n## What just happened?\n\nWaffleBot moved the Pull Request to the In Progress column and assigned it to you since you opened it.  Your Pull Request is also visually connected to the Issue on your Waffle board, making it easy to track code and issues together.\n\n##What's next?\n\nWaffleBot will move the Pull Request and Issue to the Done column when the Pull Request is merged.  Let's try it!\n1. Merge your Pull Request.\n1. Watch your Waffle board to see what happens and check back here after you've completed these steps."})
-      	context.github.issues.createComment(userIssueComment)
-      */
-
       const requestPullRequestReview = context.issue({reviewers:["adamzolyakdemo","let-s-waffle-io-bot"]})
 
       const submitPullRequestReview = context.issue({body:"Looks great! :shipit:", event:"APPROVE"})
@@ -139,11 +132,6 @@ module.exports = app => {
 
   		const userPRComment = context.issue({body:":+1: Great job!\n\n## What just happened?\n\nWaffleBot moved the Issue and Pull Request to the Done column.\n\n## What's next?\n\nCongradulations!  You learn how to move a card from idea to done without ever manually updating your Waffle board :smile:!  This task is complete!\b\bCheck the To Do and Inbox columns on your Waffle board for other tasks to keep on learning!"})
       	context.github.issues.createComment(userPRComment)
-
-      /*
-  		const userIssueComment = context.issue({number:currentIssue,body:":+1: Great job!\n\n## What just happened?\n\nWaffleBot moved the Issue and Pull Request to the Done column.\n\n##What's next?\n\nCongradulations!  You learn how to move a card from idea to done without ever manually updating your Waffle board :smile:!  This task is complete!\b\bCheck the To Do and Inbox columns on your Waffle board for other tasks to keep on learning!"})
-      	context.github.issues.createComment(userIssueComment)
-      */
 
       	const issue1 = context.issue({title: "💪 Automate AllTheThings!", body: ":muscle: You've done a great job of learning how to automate :running: a card from idea to done across your Waffle board.  But there's even more automation!\n\nTo keep learning, check out the [Waffle Automation Cheatsheet](https://waffle.io/features/cheatsheet) - the complete guide to customizing your Waffle board's automation :running::running::running: and includes a Quick Reference to all the commands :star:.\n\nThere are also a few additiomal cards in the Inbox column if you'd like to keep learning about Waffle.io :grinning:.", labels:["to do", ":runner: Let's Waffle!"]})
 
