@@ -6,6 +6,8 @@ Let's Waffle! Bot is an open source GitHub App built with [Probot](https://githu
 
 ## Getting Started
 
+Note: Let's Waffle! Bot is NOT currently hosted.  Therefore, you can only use it by creating your own GitHub App and running it yourself.
+
 To start using Let's Waffle! Bot, you'll need a GitHub repo.  We suggest creating a new repo as a learning playground.  To get started:
 
 1. Create a new GitHub repo (if needed).
