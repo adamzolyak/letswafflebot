@@ -25,6 +25,12 @@ If you have suggestions for how Let's Waffle Bot could be improved, or want to r
 
 For more, check out the [Contributing Guide](CONTRIBUTING.md).
 
+## Issue, Bugs, and Ideas
+
+We use Waffle.io to track work for this project.  Check our Waffle board.
+
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/3ef912f1caaef3de9b953d3c18d8eedb0de9ad6b90f706343cbcb1c3ef0ff228.svg?columns=all)](https://waffle.io/waffleio/letswafflebot)
+
 ### Setup
 
 ```sh
