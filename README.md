@@ -1,4 +1,4 @@
-# Let's Waffle Bot!
+# Let's Waffle Bot!  
 
 Let's Waffle! Bot is an interactive bot that teaches you how to use Waffle.io as part of your development workflow to automate project management updates and keep track of your GitHub activity in one place.
 
