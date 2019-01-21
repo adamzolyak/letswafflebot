@@ -4,6 +4,8 @@ Let's Waffle! Bot is an interactive bot that teaches you how to use Waffle.io as
 
 Let's Waffle! Bot is an open source GitHub App built with [Probot](https://github.com/probot/probot).  Contributions welcome!
 
+See a demo of Let's Waffle Bot at https://youtu.be/HpCATC_4Aa4.
+
 ## Getting Started
 
 Note: Let's Waffle! Bot is NOT currently hosted.  Therefore, you can only use it by creating your own GitHub App and running it yourself.
